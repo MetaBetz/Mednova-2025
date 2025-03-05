@@ -1,26 +1,58 @@
 body {
-    background-image: url('background.jpg'); /* Update path if needed */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('background.jpg'); /* Ensure background.jpg exists */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
     color: white;
-    text-align: center;
 }
 
-.event-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
-.option-bubble {
-    background-color: purple;
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.bubble {
+    display: block;
+    background: purple;
     color: white;
-    padding: 15px;
+    padding: 10px;
+    margin: 5px;
     border-radius: 20px;
-    display: inline-block;
-    margin: 10px;
-    font-size: 18px;
     cursor: pointer;
+}
+
+button {
+    background: orange;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkorange;
 }
