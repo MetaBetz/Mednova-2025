@@ -1,4 +1,4 @@
-
+/*Apply background image*/
 body {
     background-image: url('background.jpg'); /* Replace with your actual image filename */
     background-size: cover;
