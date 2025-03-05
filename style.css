@@ -1,12 +1,4 @@
-body {
-    background-image: url('background.jpg'); /* Ensure this filename matches your uploaded image */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-}/* Apply background image */
+
 body {
     background-image: url('background.jpg'); /* Replace with your actual image filename */
     background-size: cover;
