@@ -1,32 +1,36 @@
-<form id="registration-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" required><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mednova Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mednova Registration</h1>
+        <form id="registration-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="college" placeholder="College Name" required>
+            <input type="text" id="admission-year" placeholder="Year of Admission" required>
+            <input type="text" id="academic-year" placeholder="Current Academic Year" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" required><br>
+            <h2>Select Events/Workshops</h2>
+            <div class="events-container">
+                <label class="event-option">
+                    <input type="checkbox" name="event" value="200"> Workshop 1 - ₹200
+                </label>
+                <label class="event-option">
+                    <input type="checkbox" name="event" value="300"> Workshop 2 - ₹300
+                </label>
+                <label class="event-option">
+                    <input type="checkbox" name="event" value="150"> Event 1 - ₹150
+                </label>
+                <label class="event-option">
+                    <input type="checkbox" name="event" value="250"> Event 2 - ₹250
+                </label>
+            </div>
 
-    <label for="college">College Name:</label>
-    <input type="text" id="college" required><br>
-
-    <label for="admission-year">Year of Admission:</label>
-    <input type="number" id="admission-year" min="2000" max="2025" required><br>
-
-    <label for="academic-year">Current Academic Year:</label>
-    <select id="academic-year" required>
-        <option value="1st Year">1st Year</option>
-        <option value="2nd Year">2nd Year</option>
-        <option value="3rd Year">3rd Year</option>
-        <option value="4th Year">4th Year</option>
-        <option value="Intern">Intern</option>
-    </select><br>
-
-    <label>Select Workshops/Events:</label><br>
-    <input type="checkbox" name="event" value="100" data-name="Workshop 1"> Workshop 1 - ₹100<br>
-    <input type="checkbox" name="event" value="200" data-name="Workshop 2"> Workshop 2 - ₹200<br>
-    <input type="checkbox" name="event" value="300" data-name="Event 1"> Event 1 - ₹300<br>
-    <input type="checkbox" name="event" value="150" data-name="Event 2"> Event 2 - ₹150<br>
-
-    <p>Total: ₹<span id="total-price">0</span></p>
-
-    <button type="submit">Proceed to Payment</button>
-</form>
+            <h2>Total: ₹<span id="total-price">0</span></h2>
+            <button type="submit">Proceed to Pay</button>
+        </
