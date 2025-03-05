@@ -1,52 +1,44 @@
-document.getElementById("payButton").addEventListener("click", function() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let event = document.getElementById("event").value;
-    
-    if (name && email && phone) {
-        document.getElementById("paymentSection").style.display = "block";
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("registration-form");
+    const totalPriceElement = document.getElementById("total-price");
+    let selectedEvents = [];
 
-        // Generate UPI payment link (Replace with your UPI ID)
-        let upiId = "yourupi@upi";
-        let amount = "100";
-        let upiLink = `upi://pay?pa=${upiId}&pn=Mednova&mc=123456&tid=txn123&tr=order123&tn=EventFee&am=${amount}&cu=INR`;
-        
-        document.getElementById("upiPaymentLink").href = upiLink;
-    } else {
-        alert("Please fill all details.");
-    }
-});
+    // Update total price when checkboxes are clicked
+    document.querySelectorAll("input[name='event']").forEach(checkbox => {
+        checkbox.addEventListener("change", function () {
+            let total = 0;
+            selectedEvents = [];
 
-document.getElementById("submitForm").addEventListener("click", function() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let event = document.getElementById("event").value;
+            document.querySelectorAll("input[name='event']:checked").forEach(checkedBox => {
+                total += parseInt(checkedBox.value);
+                selectedEvents.push(checkedBox.getAttribute("data-name"));
+            });
 
-    saveToFirebase(name, email, phone, event);
-    alert("Registration Successful!");
-});
-
-// Firebase Setup
-function saveToFirebase(name, email, phone, event) {
-    let firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_PROJECT.firebaseapp.com",
-        databaseURL: "https://YOUR_PROJECT.firebaseio.com",
-        projectId: "YOUR_PROJECT",
-        storageBucket: "YOUR_PROJECT.appspot.com",
-        messagingSenderId: "YOUR_SENDER_ID",
-        appId: "YOUR_APP_ID"
-    };
-    
-    firebase.initializeApp(firebaseConfig);
-    let db = firebase.database();
-    db.ref("registrations").push({
-        name: name,
-        email: email,
-        phone: phone,
-        event: event,
-        paymentStatus: "Pending"
+            totalPriceElement.textContent = total;
+        });
     });
-}
+
+    // Handle form submission & payment
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let college = document.getElementById("college").value;
+        let admissionYear = document.getElementById("admission-year").value;
+        let academicYear = document.getElementById("academic-year").value;
+        let totalAmount = totalPriceElement.textContent;
+
+        if (totalAmount == "0") {
+            alert("Please select at least one event.");
+            return;
+        }
+
+        // Generate UPI Payment Link (Replace UPI ID with yours)
+        let upiID = "yourupi@upi";
+        let upiLink = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(name)}&mc=&tid=&tr=&tn=Mednova+Registration&am=${totalAmount}&cu=INR`;
+
+        alert(`Redirecting to UPI Payment for ₹${totalAmount}`);
+        window.location.href = upiLink;
+    });
+});
