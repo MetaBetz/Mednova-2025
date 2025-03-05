@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mednova Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Mednova Event Registration</h2>
+        <form id="registrationForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <label>Select Event:</label>
+            <select id="event">
+                <option value="Workshop A">Workshop A</option>
+                <option value="Workshop B">Workshop B</option>
+                <option value="Surgical Demo">Surgical Demo</option>
+            </select>
+            <button type="button" id="payButton">Proceed to Payment</button>
+        </form>
+        <div id="paymentSection" style="display: none;">
+            <h3>Scan QR or Click to Pay</h3>
+            <img src="upi-qr-code.png" alt="UPI QR Code">
+            <a id="upiPaymentLink" target="_blank">Pay Now via UPI</a>
+            <button id="submitForm">Submit Registration</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
