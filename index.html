@@ -7,52 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Mednova Registration</h1>
+    <div class="container">
+        <h1>Mednova Registration</h1>
 
-    <form id="registration-form">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
+        <label>Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number">
 
-        <label for="college">College Name:</label>
-        <input type="text" id="college" name="college" required><br><br>
+        <label>College Name:</label>
+        <input type="text" id="college" placeholder="Enter your college name">
 
-        <label for="year-of-admission">Year of Admission:</label>
-        <input type="number" id="year-of-admission" name="year-of-admission" required><br><br>
+        <label>Year of Admission:</label>
+        <input type="number" id="admissionYear" placeholder="Enter admission year">
 
-        <label for="current-year">Current Academic Year:</label>
-        <select id="current-year" name="current-year" required>
+        <label>Current Academic Year:</label>
+        <select id="academicYear">
             <option value="1st Year">1st Year</option>
             <option value="2nd Year">2nd Year</option>
             <option value="3rd Year">3rd Year</option>
-            <option value="4th Year">4th Year</option>
-            <option value="Intern">Intern</option>
-        </select><br><br>
+            <option value="Final Year">Final Year</option>
+        </select>
 
-        <h3>Select Events & Workshops:</h3>
-        <div class="event-container">
-            <label class="option-bubble">
-                <input type="checkbox" class="event-checkbox" data-price="500"> Workshop 1 - ₹500
-            </label>
-
-            <label class="option-bubble">
-                <input type="checkbox" class="event-checkbox" data-price="700"> Workshop 2 - ₹700
-            </label>
-
-            <label class="option-bubble">
-                <input type="checkbox" class="event-checkbox" data-price="600"> Workshop 3 - ₹600
-            </label>
+        <h2>Select Workshops & Events</h2>
+        <div class="workshop-list">
+            <label class="bubble"><input type="checkbox" value="500"> Surgery Workshop (₹500)</label>
+            <label class="bubble"><input type="checkbox" value="300"> Cardiology Workshop (₹300)</label>
+            <label class="bubble"><input type="checkbox" value="400"> Radiology Workshop (₹400)</label>
+            <label class="bubble"><input type="checkbox" value="200"> First Aid Workshop (₹200)</label>
         </div>
 
-        <p>Total Fee: ₹<span id="total-fee">0</span></p>
+        <h2>Total Fees: ₹<span id="total">0</span></h2>
 
-        <button type="submit">Register</button>
-    </form>
+        <button onclick="register()">Register</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
