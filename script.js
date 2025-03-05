@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registration-form");
-    const totalPriceElement = document.getElementById("total-price");
+    const checkboxes = document.querySelectorAll(".event-checkbox");
+    const totalFeeElement = document.getElementById("total-fee");
 
     function updateTotal() {
         let total = 0;
-        document.querySelectorAll("input[name='event']:checked").forEach(checkedBox => {
-            total += parseInt(checkedBox.value); 
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                total += parseInt(checkbox.getAttribute("data-price"));
+            }
         });
-        totalPriceElement.textContent = total;
+        totalFeeElement.textContent = total;
     }
 
-    document.querySelectorAll("input[name='event']").forEach(checkbox => {
+    checkboxes.forEach(checkbox => {
         checkbox.addEventListener("change", updateTotal);
     });
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form submission
-        const total
+});
