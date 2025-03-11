@@ -1,58 +1,56 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
     text-align: center;
-    background-image: url('background.jpg'); /* Ensure background.jpg exists */
-    background-size: cover;
-    background-position: center;
-    color: white;
 }
 
-.container {
-    width: 80%;
-    max-width: 400px;
-    margin: 20px auto;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
+    text-align: center;
 }
 
-h1, h2 {
-    margin-bottom: 10px;
+#home {
+    background: url('images/banner.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 20px;
 }
 
-label {
-    display: block;
-    margin: 10px 0;
+.cta-button {
+    background: #e8491d;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-input, select {
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
     width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: none;
-}
-
-.bubble {
-    display: block;
-    background: purple;
-    color: white;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-button {
-    background: orange;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: darkorange;
+    bottom: 0;
 }
