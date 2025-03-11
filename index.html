@@ -3,49 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mednova Registration</title>
+    <title>Mednova - LLRM College Fest</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Mednova Registration</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#registration">Delegate Pass</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <label>Name:</label>
-        <input type="text" id="name" placeholder="Enter your name">
+    <section id="home">
+        <h1>Welcome to Mednova</h1>
+        <p>The Annual Fest of LLRM Medical College</p>
+        <a href="#registration" class="cta-button">REGISTER NOW!</a>
+    </section>
 
-        <label>Email:</label>
-        <input type="email" id="email" placeholder="Enter your email">
+    <section id="events">
+        <h2>Events</h2>
+        <p>Explore exciting events including academic talks, cultural nights, and competitions.</p>
+    </section>
 
-        <label>Phone Number:</label>
-        <input type="tel" id="phone" placeholder="Enter your phone number">
+    <section id="schedule">
+        <h2>Schedule</h2>
+        <p>Check out the full schedule of Mednova.</p>
+    </section>
 
-        <label>College Name:</label>
-        <input type="text" id="college" placeholder="Enter your college name">
+    <section id="registration">
+        <h2>Delegate Pass</h2>
+        <a href="https://forms.gle/your-registration-form" target="_blank">Register Here</a>
+    </section>
 
-        <label>Year of Admission:</label>
-        <input type="number" id="admissionYear" placeholder="Enter admission year">
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: mednova.llrm@gmail.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Address: LLRM Medical College, Meerut</p>
+    </section>
 
-        <label>Current Academic Year:</label>
-        <select id="academicYear">
-            <option value="1st Year">1st Year</option>
-            <option value="2nd Year">2nd Year</option>
-            <option value="3rd Year">3rd Year</option>
-            <option value="Final Year">Final Year</option>
-        </select>
-
-        <h2>Select Workshops & Events</h2>
-        <div class="workshop-list">
-            <label class="bubble"><input type="checkbox" value="500"> Surgery Workshop (₹500)</label>
-            <label class="bubble"><input type="checkbox" value="300"> Cardiology Workshop (₹300)</label>
-            <label class="bubble"><input type="checkbox" value="400"> Radiology Workshop (₹400)</label>
-            <label class="bubble"><input type="checkbox" value="200"> First Aid Workshop (₹200)</label>
-        </div>
-
-        <h2>Total Fees: ₹<span id="total">0</span></h2>
-
-        <button onclick="register()">Register</button>
-    </div>
-
-    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2025 Mednova. All rights reserved.</p>
+    </footer>
 </body>
 </html>
